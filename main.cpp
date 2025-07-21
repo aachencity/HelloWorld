@@ -5,7 +5,16 @@ using namespace std;
 
 void sort(vector<int> &nums)
 {
-    
+    for(int sortedIndex = 0; sortedIndex < nums.size(); sortedIndex++)
+    {
+        int minIndex = sortedIndex;
+        for(int i = minIndex; i < nums.size(); i++)
+        {
+            if(nums[i] < nums[minIndex])
+            minIndex = i;
+        }
+        swap(nums[minIndex], nums[sortedIndex]);
+    }
 }
 
 int main()
